@@ -16,6 +16,9 @@ class SeleniumAutomation:
         self.delay_time = 3
     
     def delay(self, delay_time = None):
+        if is_none(delay_time):
+            delay_time = self.delay_time
+        
         sleep(self.delay_time)
 
     def setup_selenium_drive_with_android_useragent(self):
