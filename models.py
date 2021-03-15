@@ -15,3 +15,6 @@ class SeleniumAutomation:
     
     def setup_selenium_drive(self):
         self.driver = webdriver.Chrome(self.chrome_webdriver_path)
+
+    def go_to_my_adobe_connect_class_url(self):
+        self.driver.get(self.adobe_connect_class_url)
