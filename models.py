@@ -4,6 +4,7 @@ from os import getenv
 from selenium import webdriver
 from selenium.webdriver.common.keys import Keys
 from selenium.webdriver.chrome.options import Options
+from validator_collection import *
 from time import sleep
 class SeleniumAutomation:
     def __init__(self):
@@ -14,7 +15,7 @@ class SeleniumAutomation:
         self.chrome_webdriver_path = getenv("chrome_webdriver_path")
         self.delay_time = 3
     
-    def delay(self):
+    def delay(self, delay_time = None):
         sleep(self.delay_time)
 
     def setup_selenium_drive_with_android_useragent(self):
@@ -32,3 +33,4 @@ class SeleniumAutomation:
         self.driver.find_element_by_xpath("//input[@type='submit']").click()
         SeleniumAutomation().delay()
         self.driver.find_elements_by_class_name("open-in-browser-button")[-1].click()
+        #SeleniumAutomation().delay(30)
